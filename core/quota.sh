@@ -8,22 +8,31 @@
 #
 
 function fixed_akun() {
-    # Retrieve usernames from /etc/xray/config.json
-    users=$(grep '^###' /etc/xray/config.json | cut -d ' ' -f 2 | sort | uniq)
+# Retrieve usernames from /etc/xray/config.json
+users=$(grep '^###' /etc/xray/config.json | cut -d ' ' -f 2 | sort | uniq)
 
-    # Loop through each username
-    for user in $users; do
-        quota_file="/etc/xray/quota/$user"
+# Loop through each username
+for user in $users; do
+    quota_file="/etc/xray/quota/${user}"
+    usage_file="/etc/xray/quota/${user}_usage"
 
-        # Check if the quota file exists
-        if [ ! -f "$quota_file" ]; then
-            # Create the file and set the quota to 100GB
-            echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
-            echo "Created quota file for user $user with 100GB limit."
-        else
-            echo "Quota file for user $user already exists."
-        fi
-    done
+    # Check if the quota file exists
+    if [ ! -f "$quota_file" ]; then
+        # Create the file and set the quota to 100GB
+        echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
+        echo "Created quota file for user $user with 100GB limit."
+    else
+        echo "Quota file for user $user already exists."
+    fi
+
+    # Check if the usage file exists
+    if [ ! -f "$usage_file" ]; then
+        touch "$usage_file"
+        echo "Created usage file for user $user."
+    else
+        echo "Usage file for user $user already exists."
+    fi
+done
 }
 
 function send_log() {
@@ -74,16 +83,16 @@ function cekvmess() {
 
         quota0=$(( inb + outb ))
 
-        if [ -e /etc/xray/quota/"${user}" ]; then
-            quota1=$(cat /etc/xray/quota/"${user}")
+        if [ -e /etc/xray/quota/"${user}_usage" ]; then
+            quota1=$(cat /etc/xray/quota/"${user}_usage")
             if [[ -n "$quota1" ]]; then
                 quota2=$(( quota0 + quota1 ))
-                echo "$quota2" > /etc/xray/quota/"${user}"
+                echo "$quota2" > /etc/xray/quota/"${user}_usage"
             else
-                echo "$quota0" > /etc/xray/quota/"${user}"
+                echo "$quota0" > /etc/xray/quota/"${user}_usage"
             fi
         else
-            echo "$quota0" > /etc/xray/quota/"${user}"
+            echo "$quota0" > /etc/xray/quota/"${user}_usage"
         fi
         xray api stats --server=127.0.0.1:10085 -name "user>>>${user}>>>traffic>>>downlink" -reset > /dev/null 2>&1
     done
@@ -98,16 +107,16 @@ function vmess() {
             if [ -e /etc/vmess/"${user}" ]; then
                 cekdulu=$(cat /etc/vmess/"${user}")
                 if [[ -n "$cekdulu" ]]; then
-                    if [ -e /etc/xray/quota/"${user}" ]; then
-                        pakai=$(cat /etc/xray/quota/"${user}")
+                    if [ -e /etc/xray/quota/"${user}_usage" ]; then
+                        pakai=$(cat /etc/xray/quota/"${user}_usage")
                         if [[ "$pakai" -gt "$cekdulu" ]]; then
                             exp=$(grep -w "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)
                             sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
                             systemctl restart xray >> /dev/null 2>&1
-                            bol=$(cat /etc/xray/quota/"${user}")
+                            bol=$(cat /etc/xray/quota/"${user}_usage")
                             total=$(con "$bol")
                             send_log
-                            rm -rf /etc/xray/quota/"${user}"
+                            rm -rf /etc/xray/quota/"${user}_usage"
                         fi
                     fi
                 fi
