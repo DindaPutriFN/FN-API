@@ -52,12 +52,20 @@ Method : `POST`
 |Socks5|/add-socks|✅|✅|✅|✅|✅|
 |NoobZVPNS|/add-noobz|✅|✅|✅|✅|⛔️|
 
+## CEK TOTAL ACCOUNT
+Method : `GET`
 
-**Catatan**
+|Tunnel|Path|API Token|usermame|password|expired|core|
+|--|--|--|--|--|--|--|
+|SSH/OpenVPN|/list-ssh|✅|✅|⛔|⛔|⛔|
+|X-Ray|/list-xray|✅|✅|⛔|⛔|⛔|
+|NoobZVPNS|/list-noobz|✅|✅|⛔|
 
-✅ - Diperlukan
+**Note**
 
-⛔️ - Tidak digunakan
+✅ - Required
+
+⛔️ - not required
 
 ## Response
 
