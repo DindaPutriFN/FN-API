@@ -69,6 +69,19 @@ Method : `GET`
 |SSH/OpenVPN|/cek-ssh|✅|⛔|⛔|⛔|⛔|
 |X-Ray|/cek-xray|✅|⛔|⛔|⛔|⛔|
 
+## DELETE Account
+Method : `DELETE`
+
+|Tunnel|Path|API Token|usermame|password|expired|core|
+|--|--|--|--|--|--|--|
+|SSH/OpenVPN|/delete-ssh|✅|✅|⛔|⛔|⛔|
+|X-Ray|/delete-xray|✅|✅|⛔|⛔|⛔|
+|NoobZVPNS|/delete-noobz|✅|✅|⛔|⛔|⛔|
+
+|Tunnel|Path|API Token|usermame|password|days|core|
+|--|--|--|--|--|--|--|
+|SSH/OpenVPN|/renew-ssh|✅|✅|⛔|✅|⛔|
+|X-Ray|/renew-xray|✅|✅|⛔|✅|⛔|
 
 
 **Note**
