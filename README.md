@@ -19,23 +19,23 @@
 <div height='45' align="center">
 
 ### API
-WebAPI terintegrasi dengan [**FN Project**](https://t.me/fn_project)
+Integrated API With Autoscript By [**FN Project**](https://t.me/fn_project)
 
 <div height='45' align="left">
 
 ## Configuration
 
-Menu API
+Menu API:
 
     menu-api
 
 ## Endpoint
 
-Format
+Format :
 
     http://[domain.com]/api/[path]
 
-Contoh :
+Example :
 
     http://www.rerechan.com/api/addssh
 
