@@ -2,7 +2,7 @@
 <img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=Welcome+to+github+Rerechan02" />
 </p>
 <b>
-<p align='center'><a href="https://api.daily.dev/get?r=fisabiliyusri"><img src="https://telegra.ph/file/0cd2f21fc503b748258c8.png" width="150" alt="Hayuk"/></a></p>
+<p align='center'><a href="https://api.daily.dev/get?r=Rerechan02"><img src="https://telegra.ph/file/0cd2f21fc503b748258c8.png" width="150" alt="Hayuk"/></a></p>
 
 ![Rerechan02 card name](https://cardivo.vercel.app/api?name=Rerechan%20Store&description=Hi,%20everyone!%20and%20Nice%20to%20meet%20you%20%F0%9F%91%8B&image=https://raw.githubusercontent.com/Rerechan02/simple-xray/main/funny1.jpg?v=4&backgroundColor=%23ecf0f1&telegram=/&github=Rerechan02&pattern=leaf&colorPattern=%23eaeaea)
 </b>
