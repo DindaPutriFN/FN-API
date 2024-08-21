@@ -57,9 +57,9 @@ Method : `GET`
 
 |Tunnel|Path|API Token|usermame|password|expired|core|
 |--|--|--|--|--|--|--|
-|SSH/OpenVPN|/list-ssh|✅|✅|⛔|⛔|⛔|
-|X-Ray|/list-xray|✅|✅|⛔|⛔|⛔|
-|NoobZVPNS|/list-noobz|✅|✅|⛔|
+|SSH/OpenVPN|/list-ssh|✅|⛔|⛔|⛔|⛔|
+|X-Ray|/list-xray|✅|⛔|⛔|⛔|⛔|
+|NoobZVPNS|/list-noobz|✅|⛔|⛔|⛔|⛔|
 
 **Note**
 
