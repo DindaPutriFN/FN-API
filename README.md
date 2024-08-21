@@ -78,6 +78,8 @@ Method : `DELETE`
 |X-Ray|/delete-xray|✅|✅|⛔|⛔|⛔|
 |NoobZVPNS|/delete-noobz|✅|✅|⛔|⛔|⛔|
 
+## Renew Account
+Method : `PUT` or `POST`
 |Tunnel|Path|API Token|usermame|password|days|core|
 |--|--|--|--|--|--|--|
 |SSH/OpenVPN|/renew-ssh|✅|✅|⛔|✅|⛔|
