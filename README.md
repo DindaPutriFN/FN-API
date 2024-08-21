@@ -25,18 +25,9 @@ WebAPI terintegrasi dengan [**FN Project**](https://t.me/fn_project)
 
 ## Configuration
 
-File konfigurasi
+Menu API
 
-    /usr/bin/server
-
-## Access
-
-Melihat API Key
-
-    cat /etc/xray/.key
-
-Output
-'db9f7734-9dab-44e2-89f9-xxxxxxxxxxxx'
+    menu-api
 
 ## Endpoint
 
