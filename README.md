@@ -51,7 +51,7 @@ Contoh :
 ## Create
 Method : `POST`
 
-|Tunnel|Path|APIKey|user|pass|expi|core|
+|Tunnel|Path|APIKey|username|password|expired|core|
 |--|--|--|--|--|--|--|
 |SSH/OpenVPN|/addssh|✅|✅|✅|✅|⛔️|
 |VMess|/add-vmess|✅|✅|⛔️|✅|✅|
