@@ -61,6 +61,16 @@ Method : `GET`
 |X-Ray|/list-xray|✅|⛔|⛔|⛔|⛔|
 |NoobZVPNS|/list-noobz|✅|⛔|⛔|⛔|⛔|
 
+## CEK User IP Login ACCOUNT
+Method : `GET`
+
+|Tunnel|Path|API Token|usermame|password|expired|core|
+|--|--|--|--|--|--|--|
+|SSH/OpenVPN|/cek-ssh|✅|⛔|⛔|⛔|⛔|
+|X-Ray|/cek-xray|✅|⛔|⛔|⛔|⛔|
+
+
+
 **Note**
 
 ✅ - Required
