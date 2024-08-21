@@ -42,11 +42,11 @@ Output
 
 Format
 
-    http://[domain.com]:1278/[script]
+    http://[domain.com]/api/[path]
 
 Contoh :
 
-    http://www.rerechan.com:1278/addssh
+    http://www.rerechan.com/api/addssh
 
 ## Create
 Method : `POST`
@@ -54,17 +54,12 @@ Method : `POST`
 |Tunnel|Path|APIKey|user|pass|expi|core|
 |--|--|--|--|--|--|--|
 |SSH/OpenVPN|/addssh|✅|✅|✅|✅|⛔️|
-|L2TP|/addl2tp|✅|✅|✅|✅|⛔️|
-|PPTP|/addpptp|✅|✅|✅|✅|⛔️|
-|SSTP|/addsstp|✅|✅|✅|✅|⛔️|
-|VMess|/addvmess|✅|✅|⛔️|✅|✅|
-|VLess|/addvless|✅|✅|⛔️|✅|✅|
-|Trojan|/addtrojan|✅|✅|⛔️|✅|✅|
-|Shadowsocks|/addssws|✅|✅|⛔️|✅|✅|
-|Socks5|/addsocks|✅|✅|✅|✅|✅|
-|Trojan-Go|/addtrgo|✅|✅|⛔️|✅|⛔️|
-|Wireguard|/addwg|✅|✅|⛔️|✅|⛔️|
-|NoobZVPNS|/addnoobz|✅|✅|✅|✅|⛔️|
+|VMess|/add-vmess|✅|✅|⛔️|✅|✅|
+|VLess|/add-vless|✅|✅|⛔️|✅|✅|
+|Trojan|/add-trojan|✅|✅|⛔️|✅|✅|
+|Shadowsocks|/add-ss|✅|✅|⛔️|✅|✅|
+|Socks5|/add-socks|✅|✅|✅|✅|✅|
+|NoobZVPNS|/add-noobz|✅|✅|✅|✅|⛔️|
 
 
 **Catatan**
