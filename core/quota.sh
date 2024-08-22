@@ -116,6 +116,8 @@ function vmess() {
                             bol=$(cat /etc/xray/quota/"${user}_usage")
                             total=$(con "$bol")
                             send_log
+                            rm -rf /etc/xray/quota/$user
+                            rm -rf /etc/xray/quota/${user}_usage
                             rm -rf /etc/xray/quota/"${user}_usage"
                         fi
                     fi
