@@ -90,8 +90,8 @@ Method : `PUT` or `POST`
 Method: `PUT`
 
 |Feature|Path|API Token|username|password|expired|core|
-|--|--|--|--|--|--|--|--|
-|Change Password SSH|/password-ssh|✅|✅|✅|⛔️|⛔️|⛔️|
+|--|--|--|--|--|--|--|
+|Change Password SSH|/password-ssh|✅|✅|✅|⛔️|⛔️|
 **Note**
 
 ✅ - Required
