@@ -42,15 +42,15 @@ Example :
 ## Create
 Method : `POST`
 
-|Tunnel|Path|API Token|username|password|expired|core|
+|Tunnel|Path|API Token|username|password|expired|core|limit-ip|
 |--|--|--|--|--|--|--|
-|SSH/OpenVPN|/addssh|✅|✅|✅|✅|⛔️|
-|VMess|/add-vmess|✅|✅|⛔️|✅|✅|
-|VLess|/add-vless|✅|✅|⛔️|✅|✅|
-|Trojan|/add-trojan|✅|✅|⛔️|✅|✅|
-|Shadowsocks|/add-ss|✅|✅|⛔️|✅|✅|
-|Socks5|/add-socks|✅|✅|✅|✅|✅|
-|NoobZVPNS|/add-noobz|✅|✅|✅|✅|⛔️|
+|SSH/OpenVPN|/addssh|✅|✅|✅|✅|⛔️|✅|
+|VMess|/add-vmess|✅|✅|⛔️|✅|✅|⛔️|
+|VLess|/add-vless|✅|✅|⛔️|✅|✅|⛔️|
+|Trojan|/add-trojan|✅|✅|⛔️|✅|✅|⛔️|
+|Shadowsocks|/add-ss|✅|✅|⛔️|✅|✅|⛔️|
+|Socks5|/add-socks|✅|✅|✅|✅|✅|⛔️|
+|NoobZVPNS|/add-noobz|✅|✅|✅|✅|⛔️|⛔️|
 
 ## CEK TOTAL ACCOUNT
 Method : `GET`
