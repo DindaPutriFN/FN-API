@@ -43,7 +43,7 @@ Example :
 Method : `POST`
 
 |Tunnel|Path|API Token|username|password|expired|core|limit-ip|
-|--|--|--|--|--|--|--|
+|--|--|--|--|--|--|--||
 |SSH/OpenVPN|/addssh|✅|✅|✅|✅|⛔️|✅|
 |VMess|/add-vmess|✅|✅|⛔️|✅|✅|⛔️|
 |VLess|/add-vless|✅|✅|⛔️|✅|✅|⛔️|
