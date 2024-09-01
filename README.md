@@ -86,6 +86,13 @@ Method : `PUT` or `POST`
 |X-Ray|/renew-xray|✅|✅|⛔|✅|⛔|
 
 
+## OTHER
+Method: `PUT`
+
+|Feature|Path|API Token|username|password|expired|core|
+|--|--|--|--|--|--|--|--|
+|Change Password SSH|/password-ssh|✅|✅|✅|⛔️|⛔️|
+
 **Note**
 
 ✅ - Required
