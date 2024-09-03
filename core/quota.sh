@@ -8,32 +8,40 @@
 #
 
 function fixed_akun() {
-# Retrieve usernames from /etc/xray/config.json
-users=$(grep '^###' /etc/xray/config.json | cut -d ' ' -f 2 | sort | uniq)
+    # Retrieve usernames from /etc/xray/config.json
+    users=$(grep '^###' /etc/xray/config.json | cut -d ' ' -f 2 | sort | uniq)
 
-# Loop through each username
-for user in $users; do
-    quota_file="/etc/xray/quota/${user}"
-    usage_file="/etc/xray/quota/${user}_usage"
+    # Loop through each username
+    for user in $users; do
+        quota_file="/etc/xray/quota/${user}"
+        usage_file="/etc/xray/quota/${user}_usage"
 
-    # Check if the quota file exists
-    if [ ! -f "$quota_file" ]; then
-        # Create the file and set the quota to 100GB
-        echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
-        echo "Created quota file for user $user with 100GB limit."
-    else
-        echo "Quota file for user $user already exists."
-    fi
+        # Check if the quota file exists
+        if [ ! -f "$quota_file" ]; then
+            # Create the file and set the quota to 100GB
+            echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
+            echo "Created quota file for user $user with 100GB limit."
+        else
+            echo "Quota file for user $user already exists."
+            # Optional: Check if the file size is correct, and if not, correct it.
+            # Uncomment the following lines if you want to enforce a specific quota size.
+            # current_quota=$(cat "$quota_file")
+            # if [[ $current_quota -ne $((100 * 1024 * 1024 * 1024)) ]]; then
+            #     echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
+            #     echo "Updated quota file for user $user to 100GB."
+            # fi
+        fi
 
-    # Check if the usage file exists
-    if [ ! -f "$usage_file" ]; then
-        touch "$usage_file"
-        echo "Created usage file for user $user."
-    else
-        echo "Usage file for user $user already exists."
-    fi
-done
+        # Check if the usage file exists
+        if [ ! -f "$usage_file" ]; then
+            touch "$usage_file"
+            echo "Created usage file for user $user."
+        else
+            echo "Usage file for user $user already exists."
+        fi
+    done
 }
+
 
 function send_log() {
     CHATID=$(cat /etc/funny/.chatid)
