@@ -22,14 +22,13 @@ function fixed_akun() {
             echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
             echo "Created quota file for user $user with 100GB limit."
         else
-            echo "Quota file for user $user already exists."
             # Optional: Check if the file size is correct, and if not, correct it.
-            # Uncomment the following lines if you want to enforce a specific quota size.
-            # current_quota=$(cat "$quota_file")
-            # if [[ $current_quota -ne $((100 * 1024 * 1024 * 1024)) ]]; then
-            #     echo "$((100 * 1024 * 1024 * 1024))" > "$quota_file"
-            #     echo "Updated quota file for user $user to 100GB."
-            # fi
+            current_quota=$(cat "$quota_file")
+            if [[ $current_quota -ne $((100 * 1024 * 1024 * 1024)) ]]; then
+                echo "Quota file for user $user exists but has an incorrect size. Size is $current_quota."
+            else
+                echo "Quota file for user $user already exists with the correct size."
+            fi
         fi
 
         # Check if the usage file exists
