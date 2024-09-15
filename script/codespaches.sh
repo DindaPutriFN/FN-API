@@ -20,8 +20,8 @@ wget -O ws "https://raw.githubusercontent.com/DindaPutriFN/WebSocket-Proxy/main/
 chmod +x ws
 clear
 cd
-touch /root/.ws
-nohup python3 /usr/bin/ws > /root/.ws/ws.log 2>&1 &
+touch /root/.ws.log
+nohup python3 /usr/bin/ws > /root/.ws.log 2>&1 &
 wget -O /etc/default/dropbear "https://raw.githubusercontent.com/DindaPutriFN/FN-API/main/config/dropbear"
 service dropbear enable
 service dropbear start
